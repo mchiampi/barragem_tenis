@@ -1,0 +1,38 @@
+{% extends 'tenis/base.html' %}
+
+{% block content %}
+
+  <h2 class="content-subhead">Tenistas</h2>
+  <p>
+
+  Teste: {{ meu_texto }}
+
+
+    <table class="pure-table pure-table-striped">
+      <thead>
+          <tr>
+              <th>Nome</th>
+              <th>Apelido</th>
+          </tr>
+      </thead>
+
+      <tbody>
+
+        {% if jogadores %}
+          {% for jogador in jogadores %}
+              <tr class="pure-table-odd">
+                  <td>{{ jogador.nome }}</td>
+                  <td>{{ jogador.apelido }}</td>
+              </tr>
+          {% endfor %}
+        {% else %}
+          <tr class="pure-table-odd">
+              <td></td>
+              <td></td>
+          </tr>
+        {% endif %}
+
+      </tbody>
+  </table>
+
+{% endblock %}
